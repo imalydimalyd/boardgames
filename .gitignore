@@ -1,0 +1,11 @@
+# notes
+_notes
+
+# latex output & auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.synctex.gz
+*.xdv
