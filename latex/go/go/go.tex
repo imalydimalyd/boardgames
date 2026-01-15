@@ -1,0 +1,123 @@
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{{img/}}
+\begin{document}
+
+\section{围棋}
+
+\begin{minipage}[t]{.7\textwidth}
+
+    \paragraph*{游戏人数} $2$人
+
+    \paragraph*{游戏道具} $19\times19$的棋盘和棋子
+
+    \paragraph*{游戏目标} 在棋盘上争夺地盘，终局时地盘（包含棋子本身占据的点）更多的一方获胜
+
+    \paragraph*{游戏过程}
+
+    \begin{enumerate}
+        \item $2$名玩家中，一名玩家下黑棋，另一名玩家下白棋。
+        \item 从下黑棋的玩家开始，双方轮流落子。落子必须落在棋盘的交叉点上。棋子落下后不能移动。
+        \item 一片棋子指的是若干个同色且上下左右相邻的棋子。
+        \item 一片棋子的气指的是和这些棋子上下左右相邻的空交叉点。
+        \item 当一片棋子被对方棋子完全包围（没有气）时，这些棋子从棋盘上被提走。
+        \item 不允许出现局面的循环。（例如打劫）
+        \item 当双方都认为没有需要下棋的地方时，游戏结束。双方计算各自的地盘。
+    \end{enumerate}
+
+    \paragraph*{基本策略}
+
+    \begin{itemize}
+        \item 金角银边草肚皮：从角落开始围地最有效率，其次是边，最后才是中央。
+        \item 避免愚型：不要把大量棋子聚成一团。
+        \item 保持棋子连接：将棋子连接在一起可以增强生存能力，避免被分断攻击。
+        \item 做眼求活：一片棋需要至少两个真眼才能确保不被提走，这是求活的关键。
+        \item 打入与侵消：当对方围起大模样时，可以考虑打入破坏其地盘或从外部侵消。
+        \item 厚势与实地：厚势指外势强大但暂时没有确定地盘的棋子，可以用来攻击或后续围地；实地指已经确定的稳固地盘。
+        \item 弃子争先：有时可以放弃少量棋子，换取宝贵的先手或更大的利益。
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[t]{.3\textwidth}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.2]
+            \goBoard
+        \end{tikzpicture}
+        \caption{标准的围棋棋盘}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.2]
+            \goBoard
+
+            \goLikeBlackStone{5}{4}
+            \goLikeBlackStone{5}{6}
+            \goLikeBlackStone{4}{5}
+            \goLikeBlackStone{6}{5}
+            \goLikeWhiteStone{5}{5}
+
+            \goLikeBlackStone{16}{0}
+            \goLikeBlackStone{17}{1}
+            \goLikeBlackStone{18}{0}
+            \goLikeWhiteStone{17}{0}
+
+            \goLikeBlackStone{0}{17}
+            \goLikeBlackStone{1}{18}
+            \goLikeWhiteStone{0}{18}
+
+            \goLikeBlackStone{15}{14}
+            \goLikeBlackStone{15}{16}
+            \goLikeBlackStone{16}{14}
+            \goLikeBlackStone{16}{16}
+            \goLikeBlackStone{14}{15}
+            \goLikeBlackStone{17}{15}
+            \goLikeWhiteStone{15}{15}
+            \goLikeWhiteStone{16}{15}
+        \end{tikzpicture}
+        \caption{提子的例子：图中所有白棋都被提走}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.2]
+            \goBoard
+
+            \goLikeBlackStone{0}{0}
+            \goLikeBlackStone{0}{2}
+            \goLikeBlackStone{1}{1}
+            \goLikeBlackStone{1}{2}
+            \goLikeBlackStone{2}{0}
+            \goLikeBlackStone{2}{1}
+
+            \goLikeWhiteStone{9}{11}
+            \goLikeWhiteStone{9}{12}
+            \goLikeWhiteStone{10}{10}
+            \goLikeWhiteStone{10}{12}
+            \goLikeWhiteStone{11}{10}
+            \goLikeWhiteStone{11}{11}
+            \goLikeWhiteStone{11}{12}
+            \goLikeWhiteStone{12}{10}
+            \goLikeWhiteStone{12}{12}
+            \goLikeWhiteStone{13}{10}
+            \goLikeWhiteStone{13}{11}
+            \goLikeWhiteStone{13}{12}
+        \end{tikzpicture}
+        \caption{眼的例子：有两个真眼的棋子永远不会被提}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.2]
+            \goBoard
+
+            \goLikeBlackStone{2}{4}
+            \goLikeBlackStone{3}{3}
+            \goLikeBlackStone{3}{5}
+            \goLikeBlackStone{4}{4}
+
+            \goLikeWhiteStone{4}{3}
+            \goLikeWhiteStone{4}{5}
+            \goLikeWhiteStone{5}{4}
+        \end{tikzpicture}
+        \caption{打劫的例子：白棋提黑棋后，黑棋必须在先别处下一步，然后再提回来}
+    \end{figure}
+\end{minipage}
+
+\end{document}

@@ -63,3 +63,16 @@
     \goLikeStar{11}{3}
     \goLikeStar{11}{11}
 }
+
+\newcommand{\goBoard}{
+    \goLikeBoard{19}{19}
+    \goLikeStar{3}{3}
+    \goLikeStar{3}{9}
+    \goLikeStar{3}{15}
+    \goLikeStar{9}{3}
+    \goLikeStar{9}{9}
+    \goLikeStar{9}{15}
+    \goLikeStar{15}{3}
+    \goLikeStar{15}{9}
+    \goLikeStar{15}{15}
+}
