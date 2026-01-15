@@ -18,6 +18,8 @@
     bottom = 35mm
 }
 
+\renewcommand{\thefigure}{}
+
 \newcommand{\pierule}{
     \paragraph*{$N$手交换规则}
 
