@@ -1,0 +1,120 @@
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{{img/}}
+\begin{document}
+
+\section{十字路口棋}
+
+\begin{minipage}[t]{.7\textwidth}
+
+    \paragraph*{游戏人数} $2$人
+
+    \paragraph*{游戏道具} $19\times19$的棋盘和棋子
+
+    \paragraph*{游戏目标} 黑棋的目标是连接棋盘的上下两边，白棋则是左右两边
+
+    \paragraph*{游戏作者} Mark Steere
+
+    \paragraph*{游戏过程}
+
+    \begin{enumerate}
+        \item $2$名玩家中，一名玩家下黑棋，另一名玩家下白棋。
+        \item 从下黑棋的玩家开始，双方轮流落子。落子必须落在棋盘的交叉点上。棋子落下后不能移动。
+        \item 落子的位置只有一条限制：不可以出现右图所示的两种$2\times2$图案。
+        \item 如果两枚同色的棋子横竖或对角相邻（共$8$个方向），那么这两枚棋子就是相连的。
+        \item 如果黑棋连接了棋盘的上下两边，那么黑棋获胜。
+        \item 如果白棋连接了棋盘的左右两边，那么白棋获胜。
+        \item 如果一名玩家没有交叉点可以下棋，那么另一名玩家可以一直下棋，直到另一名玩家也没有交叉点可以下棋。（可以证明，只要两名玩家都还没有获胜，就一定有至少一名玩家可以下棋。也就是说，十字路口棋不存在平局。）
+    \end{enumerate}
+
+    \pierule
+
+    \paragraph*{基本策略}
+
+    \begin{itemize}
+        \item 开局时尽快抢占关键点位（如中心）。
+        \item 不要把大量棋子聚成一团，而是先下出线路的大概模样，然后再完成整条线路。
+        \item 因为十字路口棋不存在平局，所以只要“阻止对方连成路线”和“自己连成路线”其实是一回事。
+        \item 若采用$N$手交换规则，第二名玩家一定会在判断形势之后，选择更有利的一方继续下棋。所以为了防止第二名玩家得利，第一名玩家需要摆出一个尽可能均势的开局。
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[t]{.3\textwidth}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.2]
+            \goBoard
+        \end{tikzpicture}
+        \caption{十字路口棋棋盘}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \goLikeBoard{5}{5}
+
+            \goLikeBlackStone{0}{3}
+            \goLikeBlackStone{1}{2}
+            \goLikeWhiteStone{0}{2}
+            \goLikeWhiteStone{1}{3}
+
+            \goLikeBlackStone{3}{1}
+            \goLikeBlackStone{4}{2}
+            \goLikeWhiteStone{3}{2}
+            \goLikeWhiteStone{4}{1}
+        \end{tikzpicture}
+        \caption{不可以出现的两种图案}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \goLikeBoard{5}{5}
+
+            \goLikeBlackStone{0}{1}
+            \goLikeBlackStone{0}{2}
+            \goLikeBlackStone{1}{2}
+            \goLikeBlackStone{2}{0}
+            \goLikeBlackStone{2}{1}
+            \goLikeBlackStone{2}{2}
+            \goLikeBlackStone{2}{4}
+            \goLikeBlackStone{3}{3}
+            \goLikeBlackStone{3}{4}
+            \goLikeBlackStone{4}{1}
+            \goLikeBlackStone{4}{4}
+
+            \goLikeWhiteStone{0}{0}
+            \goLikeWhiteStone{0}{3}
+            \goLikeWhiteStone{0}{4}
+            \goLikeWhiteStone{1}{1}
+            \goLikeWhiteStone{1}{4}
+            \goLikeWhiteStone{2}{3}
+            \goLikeWhiteStone{3}{1}
+            \goLikeWhiteStone{4}{0}
+            \goLikeWhiteStone{4}{2}
+            \goLikeWhiteStone{4}{3}
+        \end{tikzpicture}
+        \caption{黑棋获胜}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.8]
+            \goLikeBoard{5}{5}
+
+            \goLikeBlackStone{1}{0}
+            \goLikeBlackStone{1}{2}
+            \goLikeBlackStone{1}{4}
+            \goLikeBlackStone{2}{1}
+            \goLikeBlackStone{2}{4}
+            \goLikeBlackStone{4}{1}
+            \goLikeBlackStone{4}{3}
+
+            \goLikeWhiteStone{0}{4}
+            \goLikeWhiteStone{1}{3}
+            \goLikeWhiteStone{2}{2}
+            \goLikeWhiteStone{2}{3}
+            \goLikeWhiteStone{3}{0}
+            \goLikeWhiteStone{3}{3}
+            \goLikeWhiteStone{4}{2}
+        \end{tikzpicture}
+        \caption{白棋获胜}
+    \end{figure}
+\end{minipage}
+
+\end{document}
