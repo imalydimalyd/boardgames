@@ -1,0 +1,43 @@
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{{img/}}
+\begin{document}
+
+\section{围点棋}
+
+\begin{minipage}[t]{.7\textwidth}
+
+    \paragraph*{游戏人数} $2$人
+
+    \paragraph*{游戏道具} 一定大小的方格纸，和两种不同颜色的笔
+
+    \paragraph*{游戏目标} 用自己的点尽可能围住对手的点
+
+    \paragraph*{游戏过程}
+
+    \begin{enumerate}
+        \item $2$名玩家分别使用不同颜色的笔。
+        \item 双方轮流画点。点必须画在方格纸的交叉点上，不能在已经有点的位置画点。
+        \item 围点棋一般会使用固定开局，如右图所示。
+        \item 轮到一名玩家行动时，如果若干个自己的点组成一个环，其中相邻的点横竖或对角相邻（共$8$个方向），且环中至少包含一个对手的点，那么这名玩家可以画出这个环，并用自己的笔将环内部的区域打上阴影。环不能包含已经打上阴影的区域。
+        \item 以上操作可以在画点前后进行任意次。
+        \item 不能在阴影内画点。
+        \item 允许停一手（即不在任何位置下棋）。当双方连续停了两手之后，游戏立刻结束。
+        \item 当双方都认为没有需要下棋的地方时，游戏结束。双方计算各自的围子数量。
+    \end{enumerate}
+
+    \paragraph*{贴目规则} 为平衡先手优势，一般会给后手加上一定数量的围子（具体数值可以根据玩家的经验确定）。为了防止平局，建议贴目为小数（例如$0.5$）。
+\end{minipage}
+\begin{minipage}[t]{.3\textwidth}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.65\textwidth]{dots_opening.png}
+        \caption{围点棋的一种开局}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.65\textwidth]{dots.png}
+        \caption{围点棋的中局。红方和蓝方分别围了$2$和$13$个子，所以蓝方大优}
+    \end{figure}
+\end{minipage}
+
+\end{document}
