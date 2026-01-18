@@ -18,6 +18,9 @@
     bottom = 35mm
 }
 
+\counterwithout{section}{chapter}
+\renewcommand\thesection{\arabic{section}}
+
 \renewcommand{\thefigure}{}
 
 \newcommand{\pierule}{

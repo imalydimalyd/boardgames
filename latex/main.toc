@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}用围棋子就能玩的游戏}{2}{}%
+\contentsline {section}{\numberline {1}五子棋}{3}{}%
+\contentsline {section}{\numberline {2}围棋}{4}{}%
+\contentsline {section}{\numberline {3}十字路口棋}{5}{}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}用纸和笔就能玩的游戏}{6}{}%
+\contentsline {section}{\numberline {4}围点棋}{7}{}%
