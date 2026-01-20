@@ -1,0 +1,50 @@
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{{img/}}
+\begin{document}
+
+\section{弹棋}
+
+\begin{minipage}[t]{.7\textwidth}
+
+    \paragraph*{游戏人数} $2$人
+
+    \paragraph*{游戏道具} 大小和围棋棋盘相近的木制棋盘，黑色和白色棋子（为避免棋子损坏，建议游戏在平坦的地面上进行）
+
+    \paragraph*{游戏目标} 抢先把对方所有棋子都弹出棋盘
+
+    \paragraph*{游戏过程}
+
+    \begin{enumerate}
+        \item $2$名玩家中，一名玩家下黑棋，另一名玩家下白棋。
+        \item 在开始弹棋之前，双方首先需要在棋盘上布好相同数量的棋子。
+        \item 棋盘分为黑棋半场和白棋半场。只能在自己的半场内布子。
+        \item 布子完成之后，从下白棋的玩家开始，双方轮流弹棋子。
+        \item 只能弹自己颜色的棋子。棋子可以接触任意颜色的棋子，也可以不接触任何棋子。
+        \item 当对方的棋子被弹出棋盘时，被弹出棋盘的棋子放回棋盒。
+        \item 特别地，如果自己有棋子被弹出棋盘，采用如下规则：
+              \begin{enumerate}
+                  \item 如果对方没有棋子被弹出棋盘：本回合自己被弹出棋盘的棋子可以复活。复活是指：由棋子的所有者把棋子重新放在棋盘上，但不能和已经在棋盘上的棋子重叠。
+                  \item 如果对方也有棋子被弹出棋盘：本回合自己被弹出棋盘的棋子不能复活。本回合对方被弹出棋盘的棋子由对方进行复活。
+              \end{enumerate}
+        \item 如果轮到一名玩家弹棋时这名玩家已经失去所有棋子，那么游戏结束。棋盘上还有棋子的一方胜利。
+    \end{enumerate}
+
+    \paragraph*{基本策略}
+
+    \begin{itemize}
+        \item 进攻对方棋子是最基本、最重要的策略。
+        \item 进攻对方棋子时，需要集中注意力，控制好力度和方向。争取弹出对方的棋子，同时也要避免自己的棋子被弹出。
+        \item 如果没有好的进攻机会，可以尝试把自己的棋子弹至中心，或者巩固自己的阵型，争取不给对手留下进攻机会；也可以尝试破坏对手的阵型，创造进攻机会。
+    \end{itemize}
+\end{minipage}
+\begin{minipage}[t]{.3\textwidth}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.2]
+            \goBoard
+        \end{tikzpicture}
+        \caption{弹棋棋盘}
+    \end{figure}
+\end{minipage}
+
+\end{document}
